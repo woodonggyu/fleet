@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: options
+spec:
+  config:
+    options: null
+  overrides: {}
