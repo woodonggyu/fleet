@@ -24,7 +24,7 @@ Starting [fleet container name]     ... done
 
 
 Now, Ready to start.
-Open a browser (ex. https://[hostname])
+Open a browser (ex. https://[hostname]:[port])
 ```
 
 
