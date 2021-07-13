@@ -22,26 +22,6 @@ Starting [redis container name]     ... done
 Starting [mariadb container name]   ... done
 Starting [fleet container name]     ... done
 
-$ docker logs [fleet container name]
-Environment variables prefixed with KOLIDE_ are deprecated. Please migrate to FLEET_ prefixes.`
-Migrations already completed. Nothing to do.
-Environment variables prefixed with KOLIDE_ are deprecated. Please migrate to FLEET_ prefixes.`
-################################################################################
-# ERROR:
-#   A value must be supplied for --auth_jwt_key or --auth_jwt_key_path. This value is used to create
-#   session tokens for users.
-#
-#   Consider using the following randomly generated key:
-#   O0sM+j8C4pG1jAZicS6uHyJi/vbYwnac   -> TOKEN COPY
-################################################################################
-
-$ vi docker-compose.yml
-39 line -> KOLIDE_AUTH_JWT_KEY=[TOKEN]
-
-$ docker-compose up -d
-[redis container name] is up-to-date
-[mariadb container name] is up-to-date
-Recreating [fleet container name] ... done
 
 Now, Ready to start.
 Open a browser (ex. https://[hostname])
@@ -55,7 +35,7 @@ Initial setting for login is required as follows.
 ```bash
 $ docker exec -itu 0 [container] /bin/sh
 
-$ fleetctl config set --address https://localhost:8080 --tls-skip-verify
+$ fleetctl config set --address https://[hostname]:[port] --tls-skip-verify
 
 $ fleetctl setup --email [email]
 Password:
